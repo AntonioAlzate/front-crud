@@ -1,3 +1,10 @@
+# Lista de preguntas
+1. ¿El error de CORS se produce por un tema de seguridad?
+2. ¿A parte de fetch como más podríamos realizar las peticiones HTTP?
+3. ¿El poner los componentes en el mismo archivo es por un tema de pedagogía o tiene otra razón asociada?
+
+# ------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
