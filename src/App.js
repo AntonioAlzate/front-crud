@@ -65,14 +65,20 @@ const Form = () => {
   }
 
   return <form ref={formRef}>
-    <input type="text" 
-    name="name"
-    defaultValue={item.name}
-    onChange={(event) => {
-      setState({...state, name: event.target.value})
-    }}></input>
-    {item.id && <button onClick={onEdit}>Actualizar</button>}
-    {!item.id && <button onClick={onAdd}>Agregar</button>}
+    <div className="container input-group mt-3">
+      <input type="text" 
+      name="name"
+      defaultValue={item.name}
+      className="form-control"
+      onChange={(event) => {
+        setState({...state, name: event.target.value})
+      }}></input>
+      <span className="input-group-btn">
+        {item.id && <button className="btn btn-primary" onClick={onEdit}>Actualizar</button>}
+        {!item.id && <button className="btn btn-primary" onClick={onAdd}>Agregar</button>}
+      </span>
+        
+    </div>
   </form>
 }
 
@@ -101,13 +107,13 @@ const List = () => {
   };
 
   return (
-    <div>
-      <table>
-        <thead>
+    <div className="container mt-4">
+      <table className="table table-bordered">
+        <thead className="thead-dark">
           <tr>
-            <td>ID</td>
-            <td>Nombre</td>
-            <td>¿Esta completa?</td>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>¿Esta completa?</th>
           </tr>
         </thead>
         <tbody>
@@ -117,8 +123,8 @@ const List = () => {
                 <td>{todo.id}</td>
                 <td>{todo.name}</td>
                 <td>{todo.isCompleted === true ? "SI" : "NO"}</td>
-                <td><button onClick={() => onDelete(todo.id)}>Eliminar</button></td>
-                <td><button onClick={() => onEdit(todo)}>Editar</button></td>
+                <td><button className="btn btn-primary" onClick={() => onDelete(todo.id)}>Eliminar</button></td>
+                <td><button className="btn btn-primary" onClick={() => onEdit(todo)}>Editar</button></td>
               </tr>
             );
           })}
